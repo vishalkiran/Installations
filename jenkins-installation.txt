@@ -25,3 +25,6 @@ http://ip-address:8080
 ## Unlock jenkins with intial admin password
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
+## Jenkins port number changing
+vim /etc/default/jenkins
+(Change port number 8080 to desired port number under HTTP ports)
