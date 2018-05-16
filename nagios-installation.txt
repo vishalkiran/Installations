@@ -1,0 +1,38 @@
+    1 yum -y install httpd php gcc glibc glibc-common wget perl gd gd-devel unzip zip
+    2  useradd nagios
+    3  groupadd nagcmd
+    4  usermod -a -G nagcmd nagios
+    5  usermod -a -G nagcmd apache
+    6  cd /tmp/
+    7  wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.3.4.tar.gz
+    8  tar -zxvf /tmp/nagios-4.*.tar.gz
+    9  cd /tmp/nagios-4.*
+   10  ls
+   11  ./configure --with-nagios-group=nagios --with-command-group=nagcmd
+   12  make all
+   13  make install
+   14  make install-init
+   15  make install-config
+   16  make install-commandmode
+   17  make install-webconf
+   18  make install-exfoliation
+   19  htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+   20  systemctl restart httpd
+   21  systemctl enable httpd
+   22  systemctl httpd status
+   23  service httpd status
+   24  vi /usr/local/nagios/etc/objects/contacts.cfg
+   25  cd /tmp/
+   26  wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
+   27  tar -zxvf /tmp/nagios-plugins-*.tar.gz
+   28  cd /tmp/nagios-plugins-*/
+   29  ./configure --with-nagios-user=nagios --with-nagios-group=nagios
+   30  make
+   31  make install
+   32  /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+   33  service nagios start
+   34  chkconfig nagios on
+   35  getenforce
+   36  setenforce 0
+   37  setenforce
+   38  history
