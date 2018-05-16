@@ -1,0 +1,11 @@
+1. cd /opt/
+2. wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+3. tar -xvzf apache-maven-3.3.9-bin.tar.gz
+4. rm -rf apache-maven-3.3.9-bin.tar.gz
+5. mv apache-maven-3.3.9 maven-3.3.9
+6. vim ~/.bashrc
+7. export M2_HOME=/opt/maven-3.3.9
+   export M2=$M2_HOME/bin
+   export PATH=$M2:$PATH
+8. source ~/.bashrc
+9. mvn --version
