@@ -3,7 +3,9 @@
 3. tar -xvzf apache-maven-3.3.9-bin.tar.gz
 4. rm -rf apache-maven-3.3.9-bin.tar.gz
 5. mv apache-maven-3.3.9 maven-3.3.9
+## Set Maven Path in ~/.bashrc file
 6. vim ~/.bashrc
+##Copy paste the below content in ~/.bashrc file at the end
 7. export M2_HOME=/opt/maven-3.3.9
    export M2=$M2_HOME/bin
    export PATH=$M2:$PATH
