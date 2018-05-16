@@ -1,0 +1,27 @@
+## Install jdk8
+sudo yum install java-1.8.0-openjdk-devel -y
+## update default version to java8
+sudo update-alternatives --config java
+##Choose the number beside java8
+sudo update-alternatives --config javac
+## Choose the number beside javac
+
+## Downloading Jenkins repo
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+
+##Installing Jenkins
+sudo yum install jenkins -y
+
+##Starting Jenkins
+sudo service jenkins start
+
+## Enable jenkins on reboot (jenkins auto starts when we reboot VM)
+sudo chkconfig jenkins on
+
+##Access jenkins via web browser
+http://ip-address:8080
+
+## Unlock jenkins with intial admin password
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+

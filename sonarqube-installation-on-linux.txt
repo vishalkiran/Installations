@@ -1,0 +1,21 @@
+## SonarQube is implemented using java language, to run this tool java needs to be installed on the server. ##
+## Make sure java8 is installed
+1. cd /opt
+
+## Download SonarQube using the below command
+2. wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-6.5.zip
+
+## Unzip the file
+3. sudo unzip sonarqube-6.5.zip
+
+## Start sonar server
+4. cd /opt/sonarqube-6.5/bin/linux-x86-64
+   sudo ./sonar.sh start
+   
+## Note: If there is issue starting sonar we can check the logs, under (/opt/sonarqube-6.5/logs)
+## Default port number of sonar is 9000
+## Access the sonar form webbrowser
+
+5. http://public-ip-address:9000
+
+6. Default username and password is admin/admin
