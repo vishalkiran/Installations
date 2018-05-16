@@ -38,3 +38,7 @@
     <role rolename="manager-gui"/>
     <role rolename="manager-script"/>
     <user username="javahome" password="javahome" roles="manager-gui,manager-script"/>
+   
+## Changing Tomcat Port Number
+12. vim /opt/tomcat8/conf/server.xml
+    (Change port 8080 to desired port which are under HTTP ports)
