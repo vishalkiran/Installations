@@ -2,43 +2,43 @@
 
 ## Java is the dependency for tomcat to work
 ## Installing java
-1. sudo yum install java-1.8.0-openjdk-devel -y
+sudo yum install java-1.8.0-openjdk-devel -y
 
-2. cd /opt
+cd /opt
 
 ## Download tomcat
-3. sudo wget http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
+sudo wget http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
 
 ## Untar the file
-4. sudo tar -xf apache-tomcat-8.5.31.tar.gz
+sudo tar -xf apache-tomcat-8.5.31.tar.gz
 
 ## Rename the file
-5. sudo mv apache-tomcat-8.5.31 tomcat8
+sudo mv apache-tomcat-8.5.31 tomcat8
 
 ## Change the ownership of tomcat to ec2-user
-6. sudo chown -R ec2-user:ec2-user tomcat8
+sudo chown -R ec2-user:ec2-user tomcat8
 
 ## Starting tomcat server
-7. ${TOMCAT_HOME}/bin/startup.sh
+${TOMCAT_HOME}/bin/startup.sh
 
 ## Note: default port of tomcat is 8080
 ## Stopping tomcat server
-8. ${TOMCAT_HOME}/bin/shutdown.sh
+${TOMCAT_HOME}/bin/shutdown.sh
 
 ## Troubleshooting is done with help of tomcat log files
-9. ${TOMCAT_HOME}/logs
+${TOMCAT_HOME}/logs
 
 ## Tomcat manager is the web application, using this we manage applications running on tomcat By default access is restricted to this application##
 ## Remove the restriction to manager application
-10. vi /opt/tomcat8/webapps/manager/META-INF/context.xml
-    (Remove the <Value> …….</Value> from this file)
+vi /opt/tomcat8/webapps/manager/META-INF/context.xml
+(Remove the <Value> …….</Value> from this file)
 
 ## Add user to access tomcat manager application
-11. vi /opt/tomcat8/conf/tomcat-users.xml
-    <role rolename="manager-gui"/>
-    <role rolename="manager-script"/>
-    <user username="javahome" password="javahome" roles="manager-gui,manager-script"/>
+vi /opt/tomcat8/conf/tomcat-users.xml
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<user username="javahome" password="javahome" roles="manager-gui,manager-script"/>
    
 ## Changing Tomcat Port Number
-12. vim /opt/tomcat8/conf/server.xml
+vim /opt/tomcat8/conf/server.xml
     (Change port 8080 to desired port which are under HTTP ports)
