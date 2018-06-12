@@ -22,6 +22,9 @@ vi tomcat8
 STEP-8
 ##############PASTE THE BELOW CONTENT###############
 #!/bin/bash
+# description: Tomcat Start Stop Restart  
+# processname: tomcat  
+# chkconfig: 234 20 80
 CATALINA_HOME=/opt/tomcat8
 case $1 in  
 start)  
