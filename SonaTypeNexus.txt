@@ -1,0 +1,41 @@
+# First to Update System
+sudo yum update -y
+
+# SonaTypeNexus Depends on Java-1.8.0
+sudo yum install java-1.8.0-openjdk.devel -y
+
+# If u Want Update Java AlternativesBy using Following Command
+update-alternatives --config java ##CHOOSE Java-1.8.0-VERSION ##
+
+# First Create a folder and download Nexus in that folder
+sudo mkdir /nexus
+cd /nexus
+sudo wget https://sonatype-download.global.ssl.fastly.net/nexus/3/nexus-3.0.2-02-unix.tar.gz
+sudo tar -xvf nexus-3.0.2-02-unix.tar.gz
+sudo mv nexus-3.0.2-02 nexus
+
+# Add User with name nexus
+sudo adduser nexus
+sudo chown -R nexus:nexus /nexus/nexus
+
+sudo vim /nexus/nexus/bin/nexus.rc
+run_as_user="nexus"
+
+#To add nexus to the chkconfig list, give soft link to the nexus file by using following command
+sudo ln -s /nexus/nexus/bin/nexus /etc/init.d/nexus
+sudo chkconfig --add nexus
+sudo chkconfig --levels 345 nexus on
+sudo service nexus start
+sudo chkconfig nexus on
+
+# Nexus Commands
+sudo service nexus stop
+sudo service nexus restart
+
+##TO ACCESS NEXUS http://ipadress:PortNumber
+## DefaultPort:8081##
+
+##DEFAULT USERNAME AND PASSWORD FOR NEXUS##
+User Name: admin
+Password: admin123
+
