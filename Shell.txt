@@ -1,0 +1,2 @@
+# To pick Maven artifact version
+a=$(head -n 7 pom.xml | tail -n 1 |awk '{print $1}' | sed -e "s/<version>//g" | sed 's/.\{10\}$//')
