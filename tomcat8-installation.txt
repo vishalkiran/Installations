@@ -4,6 +4,10 @@
 ## Installing java
 sudo yum install java-1.8.0-openjdk-devel -y
 
+## Updating alternatives of java and javac
+sudo update-alternatives --config java    ##choosejava 1.8.0 version
+sudo update-alternatives --config javac    ## choose java-1.8.0 version
+
 cd /opt
 
 ## Download tomcat
