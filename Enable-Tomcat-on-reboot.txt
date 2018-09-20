@@ -2,7 +2,7 @@ STEP-1
 cd /opt
 
 STEP-2
-sudo wget http://redrockdigimark.com/apachemirror/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31.tar.gz
+sudo wget http://mirrors.fibergrid.in/apache/tomcat/tomcat-8/v8.5.34/bin/apache-tomcat-8.5.34.tar.gz
 
 STEP-3
 tar-xvf apache-tomcat-8.5.31.tar.gz
