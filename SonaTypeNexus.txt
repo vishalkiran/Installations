@@ -33,7 +33,7 @@ sudo service nexus stop
 sudo service nexus restart
 
 ##TO ACCESS NEXUS http://ipadress:PortNumber
-## DefaultPort:8081##
+## ipaddress:8081##
 
 ##DEFAULT USERNAME AND PASSWORD FOR NEXUS##
 User Name: admin
